@@ -1,1 +1,18 @@
-.Requiem {}
+.pageContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.P2,
+.p3 {
+  text-align: center;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 750px;
+}
+
+.h1 {
+align-items: center;
+}

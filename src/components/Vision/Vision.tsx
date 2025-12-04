@@ -1,10 +1,10 @@
 import React , {FC } from 'react';
 import styles from './Vision.module.css';
 import { Link, NavLink } from "react-router-dom";
-import SSCL from './assets/whiteGamingLogo.mp4'
-import CH from './assets/what-is-community-health-illustration.jpg'
-import ED from './assets/ED.mp4'
-import BLCK from './assets/BLCK.mp4'
+import SSCL from '../../assets/whiteGamingLogo.mp4'
+import CH from '../../assets/what-is-community-health-illustration.jpg'
+import ED from '../../assets/ED.mp4'
+import BLCK from '../../assets/BLCK.mp4'
 
 interface VisionProps {}
 
@@ -26,7 +26,7 @@ const Vision: FC<VisionProps> = () => (
         </ul>
       </nav>
 
-      <section className="vision-content">
+  <main className="page">
         <div className="CH">
           <img src= {CH} alt="Goal" />
         </div>
@@ -57,7 +57,7 @@ const Vision: FC<VisionProps> = () => (
             <b>The BLCK Bakery</b>
           </div>
         </div>
-      </section>
+  </main>
     </>
 );
 

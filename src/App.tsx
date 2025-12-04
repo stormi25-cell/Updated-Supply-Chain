@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import Requiem from './components/Requiem/Requiem.tsx';
 import './App.css'
-import Requiem from 'src/components/Requiem';
-import './App.css'
-import Home from "./Home"
-import Vision from "./Vision"
-import Contacts from "./Contact"
+import Home from "./components/Home/Home.tsx"
+import Vision from "./components/Vision/Vision.tsx"
+import Contacts from "./components/Contacts/Contacts.tsx"
 import { BrowserRouter, Routes, Route  } from "react-router-dom";
 
 

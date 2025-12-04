@@ -1,15 +1,14 @@
 import React, { FC } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './Home.module.css';
-// adjust these asset paths to match your project
-import SSCL from '../../assets/SSCL.mp4';
-import HeadShot from '../../assets/headshot.png';
+import SSCL from '../../assets/whiteGamingLogo.mp4';
+import HeadShot from '../../assets/headshot.jpg';
 
 interface HomeProps {}
 
 const Home: FC<HomeProps> = () => {
   return (
-    <div className={styles.Home}>
+    <main className="page">
       <h1>
         <Link to="/Home">
           <video width={400} autoPlay muted playsInline>
@@ -39,7 +38,7 @@ const Home: FC<HomeProps> = () => {
         'Rest in peace, my true love, who I took for granted.' 
         - Beyonce Knowles "
       </p>
-    </div>
+    </main>
   );
 };
 

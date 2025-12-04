@@ -1,29 +1,27 @@
 import styles from './Contacts.module.css';
-import React, { useState, FC } from "react";
+import React, { useState, FC, ChangeEvent, FormEvent } from "react";
 import { Link, NavLink } from "react-router-dom";
-import SSCL from './assets/whiteGamingLogo.mp4';
-
+// corrected path: assets are in src/assets, go up two levels from this file
+import SSCL from '../../assets/whiteGamingLogo.mp4';
 
 interface ContactsProps {}
 
-const Contacts: FC<ContactsProps> = () => (
+const Contacts: FC<ContactsProps> = () => {
   const [form, setForm] = useState({ user_name: "", user_email: "" });
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setForm((s) => ({ ...s, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // replace with your submit logic (fetch, axios, etc.)
     console.log("contact form submit:", form);
-    // reset
     setForm({ user_name: "", user_email: "" });
   };
 
   return (
-    <div className="page contact-page" style={{ backgroundColor: "#F7D6E0", minHeight: "100vh" }}>
+    <main className="page" style={{ backgroundColor: "#F7D6E0", minHeight: "100vh" }}>
       <header>
         <h1>
           <Link to="/">
@@ -37,12 +35,13 @@ const Contacts: FC<ContactsProps> = () => (
           <ul>
             <li><NavLink to="/About">Essie's Requiem</NavLink></li>
             <li><NavLink to="/Vision">Stormi's Vision</NavLink></li>
-            <li><NavLink to="/Contact">Connect with me?</NavLink></li>
+            {/* fixed route to match App.tsx which uses "/Contacts" */}
+            <li><NavLink to="/Contacts">Connect with me?</NavLink></li>
           </ul>
         </nav>
       </header>
 
-      <main style={{ padding: "1rem" }}>
+      <div style={{ padding: "1rem" }}>
         <form className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name" className="name">Name:</label><br />
           <input
@@ -68,9 +67,10 @@ const Contacts: FC<ContactsProps> = () => (
             <button type="submit">Send Message</button>
           </div>
         </form>
-      </main>
     </div>
+    </main>
 
-);
+  );
+}
 
 export default Contacts;
